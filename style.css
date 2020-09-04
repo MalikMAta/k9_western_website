@@ -1,0 +1,825 @@
+@font-face {
+  font-family: "jersey_m54regular";
+  src: url("jersey_m54-webfont.woff2") format("woff2"),
+    url("jersey_m54-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primaryColor: #000000;
+  --mainWhite: #fff;
+  --mainBlack: rgb(207, 201, 201);
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+/* nav bar */
+.navbar {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0);
+  z-index: 1;
+  visibility: visible;
+}
+
+.navbar p {
+  font-family: "jersey_m54regular";
+}
+.navbarContent {
+  visibility: hidden;
+}
+
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  word-spacing: 30px;
+}
+.navbar a {
+  text-decoration: none;
+  overflow-x: hidden;
+  position: relative;
+  transition: 0.25s ease all;
+  line-height: 45px;
+  font-family: "jersey_m54regular";
+
+  display: inline-block;
+  font-weight: 300;
+  font-size: 13px;
+  height: 50px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar a:hover {
+  color: #feb40d;
+}
+
+.navbar a::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: -100%;
+  height: 5px;
+  width: 100%;
+  background: #423d3e;
+  transition: 0.5s ease all;
+}
+
+.navbar a:hover::after {
+  left: 0;
+}
+
+li:hover::after {
+  width: 100%;
+}
+.navbar p {
+  color: black;
+  font-size: 25px;
+}
+/* navbar end */
+
+/* --------------------------------------------------------------------- */
+
+/* navbar hidden */
+.navabar-hidden {
+  height: 120px;
+  position: fixed;
+  visibility: hidden;
+
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+.navbar--hidden-center p {
+  color: black;
+  font-size: 25px;
+}
+
+.navbar--hidden-center a {
+  text-decoration: none;
+  overflow-x: hidden;
+  position: relative;
+  transition: 0.25s ease all;
+  line-height: 45px;
+  font-family: "jersey_m54regular";
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  height: 50px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar--hidden-center a:hover {
+  color: #feb40d;
+}
+
+.navbar--hidden-center a::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: -100%;
+  height: 5px;
+  width: 100%;
+  background: #ffffff;
+  transition: 0.5s ease all;
+}
+
+.navbar--hidden-center a:hover::after {
+  left: 0;
+}
+
+.navabar-hidden-hidden {
+  visibility: visible;
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+}
+
+.navbar--hidden-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  word-spacing: 30px;
+  padding-top: 10px;
+}
+.navbar-hidden-info {
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+/* navbar hidden end */
+
+/* --------------------------------------------------------------------- */
+
+/* hero */
+.hero {
+  min-height: 85vh;
+  background: url("./images/ronan-furuta-ZJ8M0bfiu8U-unsplash.jpg") center/cover
+    no-repeat;
+  background-attachment: fixed;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.226);
+  display: inline-block;
+  padding: 5% 5%;
+  height: 36vh;
+
+  width: 90vh;
+  position: absolute;
+  top: 15%;
+}
+
+.banner p {
+  /* color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold; */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  font-size: 30px;
+  color: black;
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.5s step-end infinite;
+  font-family: "jersey_m54regular";
+  font-weight: bold;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(0, 0, 0);
+  }
+}
+.banner-title {
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin-top: 5rem;
+  font-weight: 500px;
+  color: black;
+}
+
+.banner-btns {
+  position: relative;
+  top: 35%;
+}
+.banner-btn {
+  width: 150px;
+  height: 65px;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1em;
+  background: var(--primaryColor);
+  color: white;
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+.banner-logo {
+  height: 150px;
+}
+/* hero end */
+
+@media only screen and (max-width: 980px) {
+  .banner {
+    width: 700px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .banner {
+    width: 300px;
+    height: 250px;
+  }
+  .banner p {
+    color: black;
+    font-size: 15px;
+    margin: 0;
+    font-family: "jersey_m54regular";
+  }
+
+  .banner-btns {
+    margin: 0rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+  .banner-btn {
+    width: 100px;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: var(--mainSpacing);
+    font-size: 10px;
+    background: var(--primaryColor);
+    color: white;
+    border: 1px solid var(--primaryColor);
+    transition: var(--mainTransition);
+    cursor: pointer;
+  }
+}
+
+/* --------------------------------------------------------------------- */
+
+/* Slogan */
+.slogan {
+  width: 70%;
+  background-color: black;
+  margin: 0 auto;
+  border-radius: 10px 10px 10px 10px;
+  height: 30vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  text-align: center;
+}
+
+.slogan h3 {
+  color: white;
+  font-size: 50px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.slogan p {
+  font-size: 17px;
+  color: white;
+  font-family: "Amiri", serif;
+}
+.slogan-one {
+  /* background-image: url("/images/Final\ darkBG2.jpg");
+  background-size: cover;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif; */
+  border-radius: 10px;
+  padding: 10%;
+}
+
+.slogan-one p {
+  font-size: 20px;
+  color: white;
+  font-family: "Amiri", serif;
+}
+@media only screen and (max-width: 580px) {
+  .slogan {
+    width: 90%;
+    background-color: black;
+    margin: 0 auto;
+    border-radius: 10px 10px 10px 10px;
+    height: 30vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .slogan {
+    width: 50;
+    align-content: center;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .slogan-one p {
+    font-size: 17px;
+    color: white;
+    font-family: "Amiri", serif;
+  }
+}
+
+/* slogan end */
+
+/* --------------------------------------------------------------------- */
+
+/* about */
+
+.about {
+  display: grid;
+  height: auto;
+  align-items: center;
+  text-align: center;
+  background-color: #fbfbfb;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 0 100px;
+  width: 100%;
+  margin: 0 auto;
+}
+.about-box {
+  min-height: 200px;
+  height: 40vh;
+  width: 100%;
+  border-radius: 5px;
+  padding: 17% 0% 0 0%;
+  /* box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0), 0 6.7px 5.3px rgba(0, 0, 0, 0),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); */
+  /* box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5); */
+  margin: 0;
+}
+
+.about2 {
+}
+.about-box i {
+  size: 500px;
+  color: black;
+}
+.about-box h3 {
+  padding: 10px;
+  color: black;
+  font-size: 30px;
+  font-family: "jersey_m54regular";
+}
+.about-box p {
+  font-size: 17px;
+  color: black;
+  font-family: "Amiri", serif;
+}
+.about-line {
+  border-top: 1px solid #feb40d;
+}
+
+.about-line-two {
+  width: 50%;
+  margin: 0;
+}
+@media only screen and (max-width: 980px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    padding: 0 5%;
+    height: 100%;
+  }
+
+  .about-box {
+    background-color: white;
+    width: 100%;
+    border-radius: 0%;
+  }
+
+  .about2 {
+    margin-top: 0;
+  }
+}
+/* about end */
+/* --------------------------------------------------------------------- */
+
+/* trainer */
+.trainer {
+  height: auto;
+  width: 100%;
+  background-color: white;
+  padding: 10% 25%;
+}
+
+.trainer-info {
+  align-content: center;
+  text-align: center;
+}
+
+.trainer-info img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 10%;
+}
+
+.trainer-info h2 {
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+@media only screen and (max-width: 580px) {
+  .trainer {
+    height: auto;
+    width: 100%;
+    background-color: #000000;
+    padding: 10% 5%;
+  }
+  .trainer-info h2 {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-size: 20px;
+  }
+}
+
+/* trainer info */
+/* --------------------------------------------------------------------- */
+
+.programs {
+  align-items: center;
+  text-align: center;
+}
+.programs h3 {
+  color: black;
+  font-family: "jersey_m54regular";
+  font-size: 5rem;
+}
+.program-price {
+  align-items: center;
+  text-align: center;
+}
+
+.program-price h3 {
+  color: rgb(105, 82, 37);
+  font-family: "jersey_m54regular";
+  font-size: 3rem;
+}
+/*  pricing*/
+/* .section-pricing {
+  height: auto;
+  background-color: #fbfbfb;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5% 0;
+} */
+.section-pricing {
+  width: auto;
+  height: auto;
+  background: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 0 10%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+/* .section-pricing:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100% solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid rgb(0, 0, 0);
+}
+.section-pricing:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100% solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid rgb(0, 0, 0);
+} */
+
+.groupPrograms {
+  background-color: white;
+
+  text-align: center;
+  line-height: 2rem;
+  height: 400px;
+  padding: 20% 5%;
+}
+
+.groupPrograms h3 {
+  font-family: "jersey_m54regular";
+}
+.groupPrograms h3 {
+  color: rgb(0, 0, 0);
+}
+
+.groupPrograms p {
+  color: rgb(0, 0, 0);
+}
+
+.group {
+  background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0), 0 6.7px 5.3px rgba(0, 0, 0, 0),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  /* box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.5); */
+}
+
+.private {
+  background-color: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0), 0 6.7px 5.3px rgba(0, 0, 0, 0),
+    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.freeEval {
+  background-color: #feb40d;
+}
+
+@media only screen and (max-width: 980px) {
+  .section-pricing {
+    display: block;
+    padding: 10% 0;
+    height: auto;
+    width: auto;
+    padding: 5%;
+  }
+
+  .program-price h3 {
+    color: rgb(105, 82, 37);
+    font-family: "jersey_m54regular";
+    font-size: 1.5rem;
+  }
+  .programs h3 {
+    color: #feb40d;
+    font-family: "jersey_m54regular";
+    font-size: 2rem;
+  }
+}
+/* .price {
+  list-style-type: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.price .header {
+  background-color: black;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+} */
+
+/* programs end */
+
+/* --------------------------------------------------------------------- */
+
+/* contaw new */
+.contact {
+  height: auto;
+  width: auto;
+  background-color: black;
+}
+
+.contact-form {
+  align-content: center;
+  text-align: center;
+  display: block;
+  padding: 10% 8%;
+}
+
+.contact-info {
+  align-content: center;
+  text-align: left;
+  display: block;
+  padding: 15% 0 0 15%;
+}
+
+#form-messages h2 {
+  font-family: "jersey_m54regular";
+}
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+
+input[type="button"],
+button {
+  width: 20%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+label {
+  color: #feb40d;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: #feb40d;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 991px) {
+  .contact-form {
+    height: auto;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+
+    padding: 5% 20%;
+  }
+
+  .contact-info {
+    align-content: center;
+    text-align: center;
+    display: block;
+    padding: 5% 15%;
+  }
+}
+/* ----contact new end-----
+
+/* --------------------------------------------------------------------- */
+
+/* photos */
+
+.photos {
+  width: 100%;
+  height: auto;
+}
+
+.photo {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.dogphotos {
+  height: 250px;
+  width: 100%;
+}
+
+/* photo end */
+
+/* --------------------------------------------------------------------- */
+
+/*--Section Footer----*/
+.section-footer {
+  height: 20vh;
+  width: 100%;
+  text-align: center;
+  background-color: #fbfbfb;
+}
+
+.section-footer h2 {
+  margin-top: 5%;
+  color: black;
+  font-size: 1.1rem;
+  font-family: "jersey_m54regular";
+}
+
+.section-footer p {
+  color: black;
+  font-family: "jersey_m54regular";
+}
+
+/* --------Section Footer---------*/
+
+/* blank space */
+.blankspace {
+  height: 20vh;
+  width: 100%;
+  background-color: #fbfbfb;
+}
+
+/* end blank space */
